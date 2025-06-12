@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>VIP POWER SIGNALS - Color Trading</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background: #0e0e1a;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
+
+    .main-content {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 40px 20px;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: bold;
+      background: linear-gradient(90deg, #ff5f6d, #ffc371, #00f2fe);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+
+    h2 {
+      font-size: 1.5em;
+      color: #00ffc8;
+      margin-bottom: 30px;
+      text-shadow: 0 0 10px #00ffc8;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto 30px auto;
+      font-size: 1.1em;
+    }
+
+    .features div {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 20px;
+      border-radius: 12px;
+      border-left: 4px solid #00ffc8;
+      box-shadow: 0 0 10px rgba(0, 255, 200, 0.2);
+      text-align: left;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .btn-primary {
+      background: #00ffc8;
+      color: #000;
+      font-weight: bold;
+      padding: 18px 40px;
+      border-radius: 35px;
+      font-size: 1.4em;
+      text-decoration: none;
+      box-shadow: 0 0 20px #00ffc8;
+      transition: 0.3s;
+    }
+
+    .btn-primary:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 35px #00ffc8, 0 0 55px #00ffc8;
+    }
+
+    .btn-secondary {
+      background: #ffffff22;
+      color: #ffffffcc;
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 1em;
+      text-decoration: none;
+      border: 1px solid #00ffc8;
+      transition: 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background: #00ffc8;
+      color: #000;
+      box-shadow: 0 0 15px #00ffc8;
+    }
+
+    .countdown {
+      font-size: 1.2em;
+      color: #fffb;
+      margin-top: 30px;
+      text-shadow: 0 0 5px #00ffc8;
+    }
+
+    @media (max-width: 768px) {
+      .features {
+        grid-template-columns: 1fr;
+      }
+      h1 {
+        font-size: 2.3em;
+      }
+      h2 {
+        font-size: 1.2em;
+      }
+      .btn-primary {
+        font-size: 1.2em;
+        padding: 15px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="particles-js"></div>
+
+  <div class="main-content">
+    <div>
+      <h1>🎨 TC LOTTERY </h1>
+      <h2>India's #1 Color Trading Game Predictions</h2>
+    </div>
+
+    <div class="features">
+      <div>✔ Ultra-accurate color predictions with 90%+ success</div>
+      <div>✔ Join 10,000+ real traders daily</div>
+      <div>✔ Instant withdrawal system & 24/7 support</div>
+      <div>✔ Get rewards for referrals & daily bonuses</div>
+    </div>
+
+    <div class="countdown">
+      ⏳ Next prediction in: <span id="timer">00:10:00</span>
+    </div>
+
+    <div class="buttons">
+      <a class="btn-primary" href="https://t.me/+_OaNr81GSRA0YzI1" target="_blank">📢 Join Telegram Channel</a>
+      <a class="btn-secondary" href="https://tcandroid.download/register?invite_code=D1AD39768356" target="_blank">Register Now</a>
+    </div>
+  </div>
+
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+
+  <!-- Particle Config -->
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 100, "density": { "enable": true, "value_area": 800 }},
+        "color": { "value": "#00ffc8" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.4, "random": true },
+        "size": { "value": 3, "random": true },
+        "line_linked": {
+          "enable": true,
+          "distance": 150,
+          "color": "#00ffc8",
+          "opacity": 0.2,
+          "width": 1
+        },
+        "move": {
+          "enable": true,
+          "speed": 2,
+          "out_mode": "out"
+        }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" }
+        }
+      },
+      "retina_detect": true
+    });
+  </script>
+
+  <!-- Countdown Timer Script -->
+  <script>
+    let countdownTime = 60* 60; // 10 minutes in seconds
+
+    function updateTimer() {
+      const minutes = Math.floor(countdownTime / 60);
+      const seconds = countdownTime % 60;
+      document.getElementById("timer").innerText =
+        `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      countdownTime--;
+      if (countdownTime < 0) {
+        countdownTime = 10 * 60; // reset after 0
+      }
+    }
+
+    setInterval(updateTimer, 1000);
+    updateTimer();
+  </script>
+
+</body>
+</html>
