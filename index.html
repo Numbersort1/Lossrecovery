@@ -3,18 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <title>Aarambh Navigation — Next Toppers</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
-    body {
+    html, body {
       font-family: 'Segoe UI', sans-serif;
       background: #0c0c0c;
       color: #fff;
-      height: 100vh;
+      height: 100%;
+      width: 100%;
+      overflow: hidden;
     }
 
-    /* LOGIN SCREEN */
     .login-screen {
       height: 100vh;
       display: flex;
@@ -80,7 +81,6 @@
     .success { color: #00ff88; }
     .error { color: #ff5555; }
 
-    /* NAVIGATION SECTION */
     #viewer {
       display: none;
       min-height: 100vh;
@@ -162,8 +162,6 @@
   </style>
 </head>
 <body>
-
-  <!-- LOGIN SCREEN -->
   <div class="login-screen" id="loginScreen">
     <div class="login-box">
       <div class="key-icon">🗝️</div>
@@ -174,25 +172,21 @@
     </div>
   </div>
 
-  <!-- NAVIGATION VIEW -->
   <div id="viewer">
     <div class="nav-container">
       <div class="card">
-        <h2>🧠 NEXT TOPPERS  Aarambh (2025-26)</h2>
-        <p> 🎯 Daily live lectures, fresh notes & study material –just pure lecture ✓<br>all in one place!
-</p>
+        <h2>🧠 NEXT TOPPERS Aarambh (2025-26)</h2>
+        <p> 🎯 Daily live lectures, fresh notes & study material – just pure lecture ✓ all in one place!</p>
         <button onclick="window.location.href='https://www.rolexcoderz.xyz/Aarambh'">LET'S STUDY</button>
       </div>
-      <div class="card h2">
-        <h2>🧠  Abhay class 9th (2025)</h2>
-        <p> 🎯 Recorded lectures,  notes & study material –all  lectures ✓
-</p>
+      <div class="card">
+        <h2>🧠 Abhay class 9th (2025)</h2>
+        <p> 🎯 Recorded lectures, notes & study material – all lectures ✓</p>
         <button onclick="window.location.href='https://www.rolexcoderz.xyz/Abhay9th'">LET'S STUDY</button>
       </div>
-      
+    </div>
   </div>
 
-  <!-- SCRIPT -->
   <script>
     const validKeys = ['TOP123', 'NT2024', 'XKEY789', 'ZTOP456'];
     const storageKey = "nt_access_key";
@@ -226,6 +220,5 @@
       document.getElementById('viewer').style.display = 'flex';
     }
   </script>
-
 </body>
 </html>
