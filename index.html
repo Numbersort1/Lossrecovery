@@ -5,7 +5,11 @@
   <title>Aarambh Navigation — Next Toppers</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     html, body {
       font-family: 'Segoe UI', sans-serif;
@@ -14,6 +18,7 @@
       height: 100%;
       width: 100%;
       overflow: hidden;
+      transform: translateZ(0);
     }
 
     .login-screen {
@@ -25,47 +30,45 @@
 
     .login-box {
       background: #121212;
-      padding: 40px;
-      border-radius: 16px;
-      box-shadow: 0 0 30px rgba(0, 255, 200, 0.3);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 255, 200, 0.2);
       text-align: center;
       width: 90%;
-      max-width: 400px;
-      animation: fadeIn 0.8s ease-in-out;
+      max-width: 380px;
     }
 
     .key-icon {
-      font-size: 40px;
+      font-size: 36px;
       margin-bottom: 10px;
-      animation: bounce 1s infinite alternate;
     }
 
     h1 {
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       color: #00ffd5;
+      font-size: 3rem;
     }
 
     input[type="password"] {
-      padding: 12px;
+      padding: 10px;
       width: 100%;
       border: none;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      font-size: 16px;
-      outline: none;
+      border-radius: 8px;
+      margin-bottom: 16px;
+      font-size: 15px;
       background: #1e1e1e;
       color: #00ffcc;
+      outline: none;
     }
 
     button {
-      padding: 12px 30px;
+      padding: 10px 24px;
       background: #00ffd5;
       color: #000;
       border: none;
-      border-radius: 10px;
+      border-radius: 8px;
       cursor: pointer;
       font-weight: bold;
-      transition: background 0.3s ease;
     }
 
     button:hover {
@@ -73,7 +76,7 @@
     }
 
     .status {
-      margin-top: 15px;
+      margin-top: 12px;
       font-size: 14px;
       min-height: 20px;
     }
@@ -83,85 +86,75 @@
 
     #viewer {
       display: none;
-      min-height: 100vh;
+      height: 100vh;
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 40px 20px;
-      animation: fadeIn 1s ease-in-out;
+      padding: 20px 15px;
     }
 
     .nav-container {
       display: flex;
       flex-direction: column;
-      gap: 30px;
+      gap: 24px;
       width: 100%;
-      max-width: 600px;
+      max-width: 580px;
     }
 
     .card {
       background: #1a1a1a;
-      border-radius: 15px;
-      padding: 30px;
+      border-radius: 12px;
+      padding: 20px;
       text-align: center;
-      box-shadow: 0 0 20px rgba(255, 179, 0, 0.2);
-      border: 1px solid rgba(255, 179, 0, 0.15);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 40px rgba(255, 179, 0, 0.4);
+      border: 1px solid rgba(255, 179, 0, 0.12);
+      transform: translateZ(0);
     }
 
     .card h2 {
-      font-size: 1.6rem;
-      margin-bottom: 15px;
+      font-size: 1.4rem;
+      margin-bottom: 10px;
       color: #FFB300;
     }
 
     .card p {
-      font-size: 0.95rem;
-      margin-bottom: 25px;
+      font-size: 0.92rem;
+      margin-bottom: 20px;
       color: #ccc;
     }
 
     .card button {
       background: #FFB300;
       color: #000;
-      padding: 10px 24px;
+      padding: 9px 20px;
       border: none;
-      border-radius: 8px;
+      border-radius: 6px;
       font-weight: bold;
-      font-size: 1rem;
+      font-size: 0.95rem;
       cursor: pointer;
-      transition: background 0.3s ease;
     }
 
     .card button:hover {
       background: #e69a00;
     }
 
-    @keyframes bounce {
-      from { transform: translateY(0); }
-      to { transform: translateY(-5px); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
     @media (min-width: 768px) {
       .nav-container {
         flex-direction: row;
         justify-content: space-between;
+        flex-wrap: wrap;
+      }
+
+      .card {
+        flex: 1 1 calc(48% - 10px);
       }
     }
   </style>
 </head>
 <body>
+
+  <!-- Login Screen -->
   <div class="login-screen" id="loginScreen">
     <div class="login-box">
       <div class="key-icon">🗝️</div>
@@ -171,36 +164,36 @@
       <div class="status" id="statusMsg"></div>
     </div>
   </div>
-  <div>
-    <h1 style="position: absolute; top: 0; left: 50%; transform: translateX(-50%); margin: 20px 0;">
-  NEXT.TOPPERS
-    </h1>
-  </div>
-<div> 
-<h2>(⁠◍⁠•⁠ᴗ⁠•⁠◍⁠)⁠❤</h2>
-</div>
 
+  <!-- Viewer Section -->
   <div id="viewer">
     <div class="nav-container">
+<div><h1 style="position: absolute; top: 7%; left: 50%; transform: translateX(-50%); margin: 10px 0;">
+  NEXT.TOPPERS
+</h1>
+</div>
+
       <div class="card">
-        <h2>🧠 Aarambh class 10th (2026)</h2>
-        <p> 🎯 Daily live lectures, fresh notes & study material – ✓ all in one place!</p>
+        <h2>🧠 Aarambh Class 10th (2026)</h2>
+        <p>🎯 Daily live lectures, notes & study material — all in one place!</p>
         <button onclick="window.location.href='https://www.rolexcoderz.xyz/Aarambh'">LET'S STUDY</button>
       </div>
-      
+
       <div class="card">
-        <h2>🧠 Aarambh class 10th (2026)</h2>
-        <p> 🎯 ALL recorded lectures subject wise.</p>
+        <h2>🧠 Aarambh Class 10th (2026)</h2>
+        <p>🎯 ALL recorded lectures subject-wise.</p>
         <button onclick="window.location.href='https://rangexcoder.netlify.app/first'">LET'S STUDY</button>
       </div>
+
       <div class="card">
-        <h2>🧠 Abhay class 9th (2025)</h2>
-        <p> 🎯 Recorded lectures, notes & study material – all ✓</p>
+        <h2>🧠 Abhay Class 9th (2025)</h2>
+        <p>🎯 Recorded lectures, notes & study material — all ✓</p>
         <button onclick="window.location.href='https://www.rolexcoderz.xyz/Abhay9th'">LET'S STUDY</button>
       </div>
     </div>
   </div>
 
+  <!-- Script -->
   <script>
     const validKeys = ['TOP123', 'NT2024', 'XKEY789', 'ZTOP456'];
     const storageKey = "nt_access_key";
@@ -222,7 +215,7 @@
         localStorage.setItem(storageKey, key);
         setTimeout(() => {
           showViewer();
-        }, 1000);
+        }, 800);
       } else {
         msg.textContent = '❌ Invalid Key. Try Again!';
         msg.className = 'status error';
